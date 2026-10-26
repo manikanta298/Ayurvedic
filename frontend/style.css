@@ -68,3 +68,35 @@ body{background:#fff;color:#000}p{color:#000}h1,h2,h3,h4{font-family:var(--serif
 @media(max-width:760px){.video-hero{min-height:calc(100svh - 118px);padding-top:25px}.video-hero .hero-content{padding:40px 0 65px}.video-hero h1{font-size:clamp(40px,8vw,62px);letter-spacing:-2px}.video-hero .hero-content>p{font-size:15px}.hero-video-backdrop:after{background:rgba(10,22,13,.72)}}
 .motion-paused .video-hero .hero-content>*{animation:none}
 @media(prefers-reduced-motion:reduce){.video-hero .hero-content>*{animation:none}}
+/* Premium soft surfaces and integrated clinic carousel */
+:root{--radius:28px;--radius-small:18px}
+.button,input:not([type=checkbox]),select,.gallery-item,.service,.booking,.visit,.map-shell,.est-card,.heritage-badge,.slides,.service-icon,.intro-art,.intro-art img,.tags li,dialog{border-radius:var(--radius)!important}
+.button{padding:16px 25px;border-radius:20px!important}.icon{border-radius:12px;padding:3px}.service-icon{border-radius:20px!important}
+.video-hero{min-height:calc(100svh - 132px);border-radius:0 0 36px 36px;padding:55px 0 0;overflow:hidden}
+.video-hero .hero-layout{grid-template-columns:1.15fr .85fr;align-items:center;gap:6%}
+.video-hero .hero-content{padding:40px;background:#fffffff0;border:1px solid #ffffffbd;border-radius:32px;box-shadow:0 24px 70px #0000001a;backdrop-filter:blur(18px);max-width:none;margin:30px 0}
+.video-hero h1{font-size:clamp(38px,4vw,62px);color:#000;letter-spacing:-2.5px}
+.video-hero h1 em,.video-hero .eyebrow,.video-hero .note-leaf{color:var(--forest)}
+.video-hero .hero-content>p,.video-hero .hero-secondary,.video-hero .hero-note{color:#000}
+.video-hero .hero-content>p{font-size:15px}.video-hero .hero-note{border-color:#dfe5d9;margin-top:32px}.video-hero .hero-secondary{border-color:#aab5a1}
+.video-hero .carousel{display:block;height:510px;margin:0;border-radius:32px;padding:12px;background:#ffffff24;border:1px solid #ffffff65;backdrop-filter:blur(12px)}
+.video-hero .slides{height:calc(100% - 52px)}.video-hero .slide figcaption{left:24px;right:20px;bottom:27px}
+.video-hero .slide figcaption b{font-size:25px}.video-hero .slide img{object-position:center}
+.video-hero .carousel-controls{color:#fff}.video-hero .carousel-controls button{border-radius:50%;background:#ffffffeb;border-color:#ffffff80}
+.video-hero .carousel-controls .dots button{background:#ffffff65;border-radius:50px}
+.video-hero .carousel-controls .dots button.active{background:#fff}
+.video-hero .heritage-badge{top:28px;left:-24px;border-radius:20px!important}
+.video-hero .hero-bottom{margin-top:35px}
+.heritage{background:radial-gradient(ellipse at 85% 10%,#e2ebd9,transparent 55%),#f7f9f5;border-radius:36px;border:1px solid var(--line)}
+.timeline{display:grid;gap:18px}.milestone{background:#ffffffb8;border:1px solid #fff;border-radius:24px;padding:0 24px 0 58px;box-shadow:0 8px 30px #304e2507;backdrop-filter:blur(14px)}
+.milestone summary{padding:25px 32px 25px 0}.timeline-dot{left:-45px;width:34px;height:34px;border-radius:13px!important}
+.milestone-title{font-size:20px}.milestone-content{padding-bottom:24px}.physician,.expansion li{border-radius:18px}
+.stats{border-radius:28px;margin:25px auto;width:94%;background:#f8faf5}.stats-grid>div{border:0!important;border-radius:22px;background:#fff;padding:22px!important;box-shadow:0 3px 18px #304e2505}.stats-grid{gap:16px;padding:20px 0}
+.service{box-shadow:0 14px 40px #304e2507;will-change:transform;transition:transform .25s,box-shadow .35s}.service:hover{box-shadow:0 28px 60px #304e2514}
+.service-image{border-radius:24px;margin:12px 12px 0}.service-body{padding:28px 30px}.service-number{border-radius:14px}
+.intro-promise,.service-note,.hero-note{border-radius:20px}.intro-promise{padding:22px}.gallery-item{box-shadow:0 8px 30px #304e2505}.gallery-item img{border-radius:24px 24px 0 0}.gallery-item>span{padding:20px}
+.booking,.visit{box-shadow:0 14px 45px #304e2506}.booking{padding:38px}.contact-section .section-heading p{color:#000}.contact-phone{font-weight:500}
+.gsap-ready .reveal{opacity:1;transform:none;transition:none}
+.gsap-ready .video-hero .hero-content>*{animation:none}
+@media(max-width:1050px){.video-hero .hero-layout{gap:3%;grid-template-columns:1.1fr .9fr}.video-hero .hero-content{padding:30px}.video-hero h1{font-size:43px}.video-hero .hero-actions{gap:15px;flex-wrap:wrap}.video-hero .carousel{height:480px}.video-hero .heritage-badge{left:18px}.milestone{padding-left:54px}}
+@media(max-width:760px){.video-hero{padding-top:20px;border-radius:0 0 28px 28px}.video-hero .hero-layout{grid-template-columns:1fr;gap:12px}.video-hero .hero-content{padding:30px 25px;margin:15px 0 10px}.video-hero h1{font-size:clamp(35px,7vw,50px)}.video-hero .carousel{height:410px;max-width:100%;width:100%;margin-bottom:15px}.video-hero .hero-bottom{margin-top:10px}.video-hero .hero-note{display:none}.video-hero .slide img{object-position:center 55%}.stats{margin-top:20px}.stats-grid{gap:12px}.stats-grid>div{padding:18px!important}.milestone{padding-right:18px;padding-left:50px}.milestone-title{font-size:18px}.booking{padding:28px}.service{will-change:auto}}

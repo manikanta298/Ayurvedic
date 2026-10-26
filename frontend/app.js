@@ -47,3 +47,22 @@ lightbox.addEventListener('click',e=>{if(e.target===lightbox){const r=lightbox.g
 const heroVideo=document.getElementById('hero-video');
 function syncHeroVideo(){if(!heroVideo)return;if(paused||document.hidden)heroVideo.pause();else if(heroVideo.currentSrc)heroVideo.play().catch(()=>{});}
 motionButton.addEventListener('click',syncHeroVideo);reduced.addEventListener('change',syncHeroVideo);document.addEventListener('visibilitychange',syncHeroVideo);syncHeroVideo();
+
+// Locally served GSAP: motion preferences and the page's pause control are respected.
+let scrollMotion;
+function configureScrollMotion(){
+ if(!window.gsap||!window.ScrollTrigger)return;
+ if(scrollMotion){scrollMotion.revert();scrollMotion=null;}
+ document.documentElement.classList.add('gsap-ready');
+ if(paused)return;
+ gsap.registerPlugin(ScrollTrigger);
+ scrollMotion=gsap.context(()=>{
+  gsap.fromTo('.hero-content > *',{autoAlpha:0,y:20},{autoAlpha:1,y:0,duration:.85,stagger:.10,ease:'power3.out',delay:.12});
+  document.querySelectorAll('.reveal,.gallery-item').forEach(el=>{
+   gsap.fromTo(el,{autoAlpha:0,y:28},{autoAlpha:1,y:0,duration:.75,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}});
+  });
+ });
+}
+motionButton.addEventListener('click',configureScrollMotion);
+reduced.addEventListener('change',configureScrollMotion);
+configureScrollMotion();
