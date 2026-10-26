@@ -100,3 +100,38 @@ body{background:#fff;color:#000}p{color:#000}h1,h2,h3,h4{font-family:var(--serif
 .gsap-ready .video-hero .hero-content>*{animation:none}
 @media(max-width:1050px){.video-hero .hero-layout{gap:3%;grid-template-columns:1.1fr .9fr}.video-hero .hero-content{padding:30px}.video-hero h1{font-size:43px}.video-hero .hero-actions{gap:15px;flex-wrap:wrap}.video-hero .carousel{height:480px}.video-hero .heritage-badge{left:18px}.milestone{padding-left:54px}}
 @media(max-width:760px){.video-hero{padding-top:20px;border-radius:0 0 28px 28px}.video-hero .hero-layout{grid-template-columns:1fr;gap:12px}.video-hero .hero-content{padding:30px 25px;margin:15px 0 10px}.video-hero h1{font-size:clamp(35px,7vw,50px)}.video-hero .carousel{height:410px;max-width:100%;width:100%;margin-bottom:15px}.video-hero .hero-bottom{margin-top:10px}.video-hero .hero-note{display:none}.video-hero .slide img{object-position:center 55%}.stats{margin-top:20px}.stats-grid{gap:12px}.stats-grid>div{padding:18px!important}.milestone{padding-right:18px;padding-left:50px}.milestone-title{font-size:18px}.booking{padding:28px}.service{will-change:auto}}
+/* Floating glass navigation over the hero */
+html{scroll-padding-top:125px}
+header{position:sticky;top:14px;width:min(1360px,94%);margin:14px auto -112px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.8);border-radius:26px;backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%);box-shadow:0 12px 40px #10241414;transition:background .3s,box-shadow .3s;isolation:isolate}
+header.is-scrolled{background:rgba(255,255,255,.92);box-shadow:0 8px 32px #1024141a}
+.navigation{height:88px;width:100%;padding:0 22px;gap:20px;border-radius:26px}
+.navigation .brand-logo{max-width:28%;padding-right:23px;border-right:1px solid #304e251b}
+.navigation .brand-logo img{width:174px;height:70px}
+nav#nav{display:flex;align-items:center;gap:5px;color:#000;font-weight:500;font-size:13px}
+#nav>a:not(.button){padding:13px 17px;border-radius:16px;transition:background .2s,color .2s;white-space:nowrap}
+#nav>a:not(.button):after{display:none}
+#nav>a:not(.button):hover{background:#304e250c}
+#nav>a[aria-current]:not(.button){background:#fff;box-shadow:0 3px 14px #20381b09;color:var(--forest)}
+#nav .nav-cta{margin-left:16px;min-height:46px;padding:13px 19px;border-radius:16px!important;box-shadow:0 5px 15px #304e2518;font-size:12px;gap:14px}
+header .scroll-progress{position:absolute;bottom:0;left:24px;max-width:calc(100% - 48px);height:2px;border-radius:3px;background:#304e2540}
+.video-hero{padding-top:145px;min-height:calc(100svh - 32px)}
+.menu-button{border-radius:15px;min-height:44px;padding:10px 14px;gap:10px;color:#000;border-color:#304e2526;background:#ffffff90}
+.menu-button[aria-expanded=true]{background:#eaf0e5;border-color:#304e2540}
+.menu-button span{font-size:18px}
+@media(min-width:761px){.menu-button{display:none}}
+@media(max-width:1050px) and (min-width:761px){.navigation{padding:0 15px;gap:8px}.navigation .brand-logo{padding-right:12px}.navigation .brand-logo img{width:150px}nav#nav{gap:0;font-size:12px}#nav>a:not(.button){padding:12px 11px}#nav .nav-cta{margin-left:8px;padding:12px 14px;font-size:11px;gap:8px}}
+@media(max-width:760px){
+ header{top:10px;width:92%;margin:10px auto -90px;border-radius:23px}
+ .navigation{height:76px;padding:0 16px;border-radius:23px}
+ .navigation .brand-logo{max-width:68%;padding-right:0;border:0}
+ .navigation .brand-logo img{width:162px;height:64px}
+ .menu-button{display:flex}
+ nav#nav{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;align-items:stretch;gap:5px;padding:13px;background:rgba(255,255,255,.96);border:1px solid #ffffffde;border-radius:23px;box-shadow:0 18px 40px #10241424;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+ nav#nav.open{display:flex;flex-wrap:nowrap}
+ #nav>a:not(.button){padding:15px 18px;font-size:14px;min-height:48px}
+ #nav>a[aria-current]:not(.button){background:#eff4e9;box-shadow:none}
+ #nav .nav-cta{margin:7px 0 0;min-height:49px;font-size:13px}
+ .video-hero{padding-top:105px}
+}
+@media(prefers-reduced-motion:reduce){header,#nav>a{transition:none}}
+@supports not (backdrop-filter:blur(1px)){header{background:rgba(255,255,255,.94)}}

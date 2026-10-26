@@ -66,3 +66,6 @@ function configureScrollMotion(){
 motionButton.addEventListener('click',configureScrollMotion);
 reduced.addEventListener('change',configureScrollMotion);
 configureScrollMotion();
+const glassHeader=document.querySelector('header');
+function updateGlassHeader(){glassHeader.classList.toggle('is-scrolled',window.scrollY>40);}
+window.addEventListener('scroll',updateGlassHeader,{passive:true});updateGlassHeader();
