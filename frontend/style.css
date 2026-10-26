@@ -135,3 +135,21 @@ header .scroll-progress{position:absolute;bottom:0;left:24px;max-width:calc(100%
 }
 @media(prefers-reduced-motion:reduce){header,#nav>a{transition:none}}
 @supports not (backdrop-filter:blur(1px)){header{background:rgba(255,255,255,.94)}}
+/* Keep the five primary links centered independently of the logo and CTA. */
+@media(min-width:1060px){
+ .navigation{display:grid;grid-template-columns:200px minmax(0,1fr) 200px;position:relative}
+ .navigation .brand-logo{grid-column:1;max-width:100%;justify-self:start;padding-right:18px}
+ nav#nav{grid-column:2;justify-content:center;width:100%}
+ #nav .nav-cta{position:absolute;right:22px;top:50%;transform:translateY(-50%);margin:0;width:190px;justify-content:center}
+}
+@media(min-width:761px) and (max-width:1059px){
+ .navigation{display:grid;grid-template-columns:165px minmax(0,1fr) 165px;position:relative;gap:0}
+ .navigation .brand-logo{grid-column:1;max-width:100%;padding-right:10px}
+ nav#nav{grid-column:2;justify-content:center;width:100%;gap:0}
+ #nav>a:not(.button){padding:12px 9px}
+ #nav .nav-cta{position:absolute;right:15px;top:50%;transform:translateY(-50%);margin:0;width:158px;justify-content:center;padding:12px 10px}
+}
+@media(max-width:760px){
+ #nav>a:not(.button){text-align:center}
+ #nav .nav-cta{position:static;transform:none;width:auto}
+}
