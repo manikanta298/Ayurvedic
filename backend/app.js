@@ -4,7 +4,7 @@ import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateEnquiry, services } from './validation.js';
 const frontend = fileURLToPath(new URL('../frontend/', import.meta.url));
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 const csp = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'";
 export function createApp({ database, origin = 'http://localhost:3000', rateLimit = 10, production = false, now = Date.now }) {
   const allowedOrigin = new URL(origin).origin;
